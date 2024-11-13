@@ -30,6 +30,7 @@ sudo systemctl start docker
 
 # adicionando docker a um grupo sem precisar ficar digitando "sudo" toda vez" 
 sudo usermod -aG docker $USER
+# Depois de disparar o comando acima, reinicie sua máquina ou saia da sessão e volte novamente para que o usermod funcione corretamente
 
 #testando sem o sudo
 docker ps
