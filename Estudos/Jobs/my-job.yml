@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec: # especificação do job
+  completions: 10 # esse job vai criar 10 pods
+  completionMode: "Indexed" # Colocando um índice para que possamos ver visulmente uma ordem específica dos pods com o comando: kubectl get pods após aplicar este arquivo
+  parallelism: 5 # lançando os 5 primeiros pods de uma vez só
+  activeDeadLineSeconds: 15 # definindo 15s para o pod terminar de executar a tarefa, os restante que não terminou de executar a tarefa simplesmente são deletados pelo job-controller, esse campo depende muito do processamento da sua máquina ou do servidor que esta sendo executado esse job
+  #restartPolicy: Never # Forçando o erro, pois o restartPolicy esta atrelado ao pod e não ao job
+  template: # template do pod
+    metadata:
+      name: my-job-pod
+    spec: # especicaçõao do contianer
+      containers:
+        - name: my-container-busybox
+          image: busybox
+          command: # comandos que serão utilizando dentro do busybox
+            - "bin/sh" # usando shell
+            - "-c" # string de comandos em sequência
+            - "for i in 1 2; do echo Lucky number $i = $((1 + RANDOM % 70)); done" # comando para gerar um número aleatorio entre 1 e 70
+      restartPolicy: Never # Quando o pod for desligado, ele não vai ser reiniciado por conta do Never
+ 

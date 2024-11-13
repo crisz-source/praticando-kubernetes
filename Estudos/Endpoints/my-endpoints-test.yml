@@ -1,0 +1,27 @@
+# When the EndpointController starts, it will detect the endpoints without corresponding services, and delete these endpoints.
+# Create a Services without Selectors
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-endpoints-service # 
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+# Because this Service has no selector, the corresponding Endpoint object is not created automatically.
+# You can manually map the Service to the network address and port where it’s running,
+# by adding an Endpoint object manually:
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: my-endpoints-service # o nome do endpoint precisa ser o mesmo nome do serviço que vai utiliza-lo 
+subsets: # endereços IPs que vou utilizar, utilizando o endpoint com endereço ip
+- addresses:
+  - ip: 10.244.0.6 # Apache <---- (ip do pod)
+  - ip: 10.244.0.7  # Nginx <---- (ip do pod)
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP

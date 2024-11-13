@@ -1,0 +1,25 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm # <-----
+data: # definições de chaves e valor que vai configurar o container
+  # Connection database config
+  database: mysql
+  database_uri: mysql://localhost:3306
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-cm-env
+spec:
+  containers:
+  - name: my-container
+    image: nginx
+    envFrom:  # definindo qual ConfigMap vai ser utilizado por este contianer
+      - configMapRef:
+          name: my-cm # utilziando o ConfigMap chamado my-cm que foi definido logo acima
+    command:
+      - "bin/sh"
+      - "-c"
+      - "echo My Database = $database - $database_uri"
+  restartPolicy: Never # pod vai ser executado apenas uma vez e vai terminar, se remover essa linha o container vai ficar reiniciando constantemente pelo kubelet, 

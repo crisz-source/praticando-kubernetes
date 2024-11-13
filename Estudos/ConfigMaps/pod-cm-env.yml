@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-cm-env
+spec:
+  containers:
+  - name: my-container
+    image: nginx
+    envFrom:  # definindo qual ConfigMap vai ser utilizado por este contianer
+      - configMapRef:
+          name: my-cm # utilziando o ConfigMap chamado my-cm que foi definido logo acima

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-cm-vol
+spec:
+  containers:
+    - name: my-container
+      image: nginx
+      envFrom:  
+        - configMapRef:
+            name: my-cm
+      volumeMounts:
+        - name: my-vol  # utilziando o volume criado abaixo
+          mountPath: "/etc/my-vol" # definindo o caminho de onde o volume vai ser montado *dentro do container*
+          readOnly: true # volume montado assim vai ficar com a permissão de apenas escrita
+
+  
+  volumes: # armazenando os dados do ConfigMap em um volume
+    - name: my-vol
+      configMap:
+        name: my-cm # este configmap vai ser utilziado por este volume *my-vol*, basicamente vai fazer uma criação associada a este configmap

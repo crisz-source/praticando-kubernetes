@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+spec:
+  containers:
+    - name: redis-container
+      image: redis
+      volumeMounts: # volume do container
+        - name: cache-storage # nome do volume que você deseja montar
+          mountPath: /my-volume # caminho de montagem dentro do container
+
+  volumes: # volume do pod
+    - name: cache-storage
+      emptyDir: {} # assim que o pod/container iniciar, vai iniciar com o volume /my-volume vazio
+    

@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm # <-----
+data: # definições de chaves e valor que vai configurar o container
+  # Connection database config
+  # database: mysql
+  # database_uri: mysql://localhost:3306
+  my.confing.db: |  # explicação no arquivo FilesProperties.md, basicamente gera um arquivo com as configuração após | 
+      database: mariadb
+      database_uri: mariadb://localhost:3306
+  test.field: eaii!!
+immutable: true # protejendo o configmap, qualquer configuração adicionado antes dessa linha e quando for aplicado, não vai funcionar e vai retorar um erro. Basta apenas apagar o configmap e adicionar false ou simplesmente apagar a linha immutable

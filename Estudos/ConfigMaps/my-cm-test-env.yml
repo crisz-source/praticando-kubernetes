@@ -1,0 +1,26 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-cm # <-----
+data: # definições de chaves e valor que vai configurar o container
+  # Connection database config
+  database: mysql
+  database_uri: mysql://localhost:3306
+
+  # User Interface
+  font.title: Arial Bold
+  background-color: 
+  theme.1: clean
+  theme.2: dark # forçando um error por conta do 1theme que não é aceito
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-cm-env
+spec:
+  containers:
+  - name: my-container
+    image: nginx
+    envFrom:  # definindo qual ConfigMap vai ser utilizado por este contianer
+      - configMapRef:
+          name: my-cm # utilziando o ConfigMap chamado my-cm que foi definido logo acima

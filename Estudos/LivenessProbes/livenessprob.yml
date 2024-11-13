@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-pod
+spec:
+  containers:
+    - name: liveness-container-test
+      image: busybox
+      args: # equivalente o CMD do dockerfile, ele basicamente substitui o CMD do dockerfile caso esteja usando uma imagem que o CMD esteja presente
+        - /bin/sh # chamada ao sh
+        - -c  # informando que será usado diversas linhas de comand 
+        - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600 # irá criar um arquivo healthy dentro de tmp, depois de criado vai aguardar 30s, depois de 30s vai exlcluir o arquivo criado, e depois de excluido vai aguardar 600s
+          # assim que o container for inciado, essa linha vai ser executado: /bin/sh -c touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+
+      livenessProbe:
+        exec: # executar comando dentro de livenessProbe
+          command:  # equivalente o ENTRYPOINT do dockerfile, ele basicamente substitui o ENTRYPOINT do dockerfile caso esteja usando uma imagem que o ENTRYPOINT esteja presente
+            - cat  
+            - /tmp/healthy # dando um cat dentro de healthy
+        initialDelaySeconds: 5 # esperando 5 segundos antes de executar o cat para dar tempo do container subir
+        periodSeconds: 5 # a cada 5 segundos ele vai verificar o comando cat
+        failureThreshold: 3 # este campo vai tentar 3 vezes a cada 5 segundos usar o comando cat, se não ouver sucesso, ele vai reiniciar o container 

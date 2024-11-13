@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob 
+metadata:
+  name: my-cj
+spec: # coração do cronjob
+  #suspend: true # pausando o cronjob 
+  failedJobsHistoryLimit: 5 # em caso de falha, o cronjob vai fazer um historico de 5
+  successfulJobsHistoryLimit: 10 # tendo mais saída de historicos para ajudar a compreender e analisar o historico da melhor forma
+  schedule: "* * * * *" # a cada minuto vai executar o job, ou seja, a cada minuto vai criar um job
+  jobTemplate: # "iniciando o template dos jobs"
+    spec: # especificações do job
+      parallelism: 5 # a cada job que este cronjob criar, ele vai criar 5 pods em paralelo e não 1 por 1.. vai realizar a execução dos numero da sorte mais rapido
+      completions: 10 # a cada job que este cronjob criar, ele vai criar 10 pods
+      completionMode: "Indexed"
+      template: #template dos jobs
+        spec: # especicaçõao do contianer
+          containers:
+            - name: my-container-busybox
+              image: busybox
+              command: 
+                - "bin/sh" 
+                - "-c" 
+                - "for i in 1 2; do echo Lucky number $i = $((1 + RANDOM % 70)); done" 
+          restartPolicy: Never 
+      
