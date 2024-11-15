@@ -12,7 +12,7 @@ metadata:
   namespace: production
 spec: 
   type: ExternalName 
-  externalName: mydatabase.dbcompany.com
+  externalName: mydatabase.dbcompany.com 
 ```
 
 # Explicação de mydatabase.dbcompany.com

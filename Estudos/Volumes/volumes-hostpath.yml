@@ -15,4 +15,4 @@ spec:
     - name: my-hostpath-vol # identificador do volume para ser usado
       hostPath: # tipo do volume
         path: /var/lib/2-persist # caminho do volume que será montado
-    
+     

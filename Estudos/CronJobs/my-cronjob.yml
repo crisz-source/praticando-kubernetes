@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: CronJob 
 metadata:
   name: my-cj
-spec: # coração do cronjob
+spec: # coração do cronjob 
   #suspend: true # pausando o cronjob 
   failedJobsHistoryLimit: 5 # em caso de falha, o cronjob vai fazer um historico de 5
   successfulJobsHistoryLimit: 10 # tendo mais saída de historicos para ajudar a compreender e analisar o historico da melhor forma

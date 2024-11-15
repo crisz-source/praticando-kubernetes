@@ -20,7 +20,7 @@ kubectl run -it --image debian network-id-test
 
 # Já dentro do container, digite: 
 apt update && apt install curl dnsutils -y 
-
+ 
 # utilizando o lookup
 nslookup svc-sts
 

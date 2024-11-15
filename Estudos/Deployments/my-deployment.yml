@@ -5,7 +5,7 @@ metadata:
   labels:
     app:  frontend
 spec:
-  template: 
+  template:  
     metadata:
       name: pod-my-nginx
       labels:

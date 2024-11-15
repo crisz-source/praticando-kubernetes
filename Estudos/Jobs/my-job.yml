@@ -20,4 +20,4 @@ spec: # especificação do job
             - "-c" # string de comandos em sequência
             - "for i in 1 2; do echo Lucky number $i = $((1 + RANDOM % 70)); done" # comando para gerar um número aleatorio entre 1 e 70
       restartPolicy: Never # Quando o pod for desligado, ele não vai ser reiniciado por conta do Never
- 
+  

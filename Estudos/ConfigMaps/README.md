@@ -1,7 +1,7 @@
 # configmaps, serve para gerenciar toda a parte que configura a aplicação como um todo
 ### Para criar um configmap e configurar um pod para utilizar um configmap, é necessário criar um configmap PRIMEIRO e depois o pod
 
-# aplicando o arquivo yml 
+# aplicando o arquivo yml  
 ```bash
 kubectl apply -f my-cm-test-env.yml 
 

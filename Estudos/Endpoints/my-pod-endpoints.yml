@@ -7,7 +7,7 @@ spec:
   - name: my-apache-container
     image: httpd
 ---
-apiVersion: v1
+apiVersion: v1 
 kind: Pod
 metadata:
   name: pod-nginx # 10.244.0.7 <---- (entrei dentro do pod e peguei este ip)

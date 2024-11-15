@@ -17,7 +17,7 @@ apt update
 apt install curl -y
 
 # depois de atualizar o repositório, e instalar o curl, teste a comunicação com o ip do serviço na porta desejada
-curl ip-service:80
+curl ip-service:80 
 
 # se retornar its works dentro do container, esta configurado corretamente!
 <html><body><h1>It works!</h1></body></html>

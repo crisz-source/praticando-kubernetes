@@ -2,7 +2,7 @@
 
 ###  Formato cron. 
 ```bash
-* * * * * * 
+* * * * * *  
 | | | | | | 
 | | | | | +-- Ano            (intervalo: 1900-3000)
 | | | | +---- Dia da semana  (intervalo: 0-7, sendo domingo 0 e segunda 1)

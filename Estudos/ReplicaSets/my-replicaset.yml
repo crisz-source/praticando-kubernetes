@@ -19,4 +19,4 @@ spec: # especificaçções do pod
     matchLabels:
       apps: my-app
   replicas: 4
-
+ 

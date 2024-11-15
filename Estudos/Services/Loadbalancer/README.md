@@ -6,4 +6,4 @@ kubectl apply -f loadbalancer.yml -f service.yml
 minikube service --url frontend-service-loadbalancer
 
 # entre com o ip gerado no browser
-```
+``` 

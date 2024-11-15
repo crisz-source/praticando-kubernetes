@@ -22,4 +22,4 @@ ping 10.244.0.21
 
 # deletando os pod
 kubectl delete pod redis-pod tomcat-pod
-```
+``` 

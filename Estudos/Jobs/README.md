@@ -16,3 +16,4 @@ kubectl logs <nome-do-pod>
 # As demais explicações está no arquivo yml
 
 # Saídas de erros de um container que esta dentro de um pod que esta dentro de um job
+ 

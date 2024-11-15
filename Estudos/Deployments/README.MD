@@ -6,8 +6,8 @@ kubectl scale deploy/frontend-deploy --replicas=11
 
 # Deletando o deployment
 kubectl delete deploy frontend-deploykk
-
-
+ 
+ 
 para fazer os testes de rollback, modifique a imagem do nginx para qualquer versão de sua escolha e execute o comando de apply novamente para que funcione corretamente o comando rollout
 
 # rollout:

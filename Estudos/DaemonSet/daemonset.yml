@@ -8,7 +8,7 @@ spec:
   selector: 
     matchLabels:
       app: my-app    
-  template:
+  template: 
     metadata:
       name: my-pod-web-server
       labels:

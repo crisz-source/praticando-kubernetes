@@ -12,3 +12,4 @@ spec:
       protocol: TCP
       targetPort: 8888
       nodePort: 30090  # porta externa
+ 

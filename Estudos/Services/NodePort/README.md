@@ -21,6 +21,6 @@ kubectl get nodes -o yaml | grep address
 kubectl get svc
 kubectl delete svc frontend-service-nodeport
 
-kubectl get pod
-kubectl delete pod web-pod
+kubectl get pod 
+kubectl delete pod web-pod 
 ```

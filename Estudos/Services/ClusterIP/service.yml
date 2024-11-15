@@ -10,4 +10,4 @@ spec: #especificações do service
     - name: httpd # nome para a porta, facilitando a identificação da porta que neste caso é a porta 80
       port: 80 # porta do serviço, obrigatório!!
       targetPort: 80 # essa porta é a porta que foi definida no container, assim que receber alguma solicitação este serviço vai encaminhar para o container por conta do targetPort
-    
+     

@@ -16,7 +16,7 @@ NAME         READY   STATUS    RESTARTS   AGE     IP           NODE       NOMINA
 pod-apache   1/1     Running   0          2m23s   10.244.0.6   minikube   <none>           <none>
 pod-nginx    1/1     Running   0          2m23s   10.244.0.7   minikube   <none>           <none>
 ```
-
+ 
 # É possível fixar esses endereços IPs dos pods
 ```bash
 # Copiei o endereço ip do pod apache e nginx e aidicionei na frente como comentário de cada pod no manifesto, criei um outro arquivo manifesto e fiz a criação do service e endpoint; Aplique-os

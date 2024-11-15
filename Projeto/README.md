@@ -9,7 +9,7 @@
 - **Projeto Fase 5** - Testando Aplicação (teste de funcionalidade)
 - **Projeto Fase 6** - Migrando Aplicação para Service
 - **Projeto Fase 7** - Migrando Porta da Aplicação
-- **Projeto Fase 8** - Escalando Aplicação 
+- **Projeto Fase 8** - Escalando Aplicação  
 - **Projeto Fase 9** - Atualizando Aplicação
 - **Projeto Fase 10** - Analise Final e Remoção da aplicação
 

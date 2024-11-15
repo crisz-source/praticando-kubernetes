@@ -20,3 +20,4 @@ spec:
         initialDelaySeconds: 5 # esperando 5 segundos antes de executar o cat para dar tempo do container subir
         periodSeconds: 5 # a cada 5 segundos ele vai verificar o comando cat
         failureThreshold: 3 # este campo vai tentar 3 vezes a cada 5 segundos usar o comando cat, se não ouver sucesso, ele vai reiniciar o container 
+ 

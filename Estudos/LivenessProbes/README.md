@@ -15,7 +15,7 @@ touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
 ```bash
 kubectl apply -f livenessprob.yml && \ 
 sleep 5 && \ 
-kubectl get pods && \ 
+kubectl get pods && \  
 sleep 30 && \ 
 kubectl describe pod liveness-pod && \ 
 sleep 35 && \ 

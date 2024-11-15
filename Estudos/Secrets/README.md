@@ -18,7 +18,7 @@ Error from server (BadRequest): error when creating "my-secret.yml": Secret in v
 ```
 # Gerando codificação em base64 e decodificando
 ```bash
-echo -n 'admin' | base64
+echo -n 'admin' | base64 
 echo -n 'My-pass-123' | base64
 
 # Saída esperdada

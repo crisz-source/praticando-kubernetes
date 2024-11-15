@@ -13,7 +13,7 @@
 
 ### Passo 1: Instalar o docker
 
-```bash
+```bash 
 # Atualize o gerenciador de pacotes
 sudo apt update
 

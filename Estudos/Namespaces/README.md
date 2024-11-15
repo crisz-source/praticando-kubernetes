@@ -16,7 +16,7 @@ kubectl apply -f tomcat-pod-ns.yml -n=frontend
 # verificando se deu tudo certo o pod tomcat dentro do namespace frontend
 ```bash
 kubectl get pod -n=frontend
-```
+``` 
 
 
 # opcional, removendo a namespace default do kubernetes e definindo uma nova namespace como default. Todos os recursos que irão ser criados, sendo forma imperativa ou utilizando arquivos .yml, os recursos por padrão serão criados no namespace frontend. Deixei o comando para voltar ao normal caso prefira

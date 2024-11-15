@@ -10,4 +10,4 @@ kubectl apply -f resources.yml
 
 ## Verificando  o limite mínimo e máximo
 kubectl describe pod resources-pod
-```
+``` 

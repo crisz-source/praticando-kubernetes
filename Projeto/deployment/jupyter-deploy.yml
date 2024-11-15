@@ -21,4 +21,4 @@ spec:
           ports:
             - containerPort: 8888
           command: ["start-notebook.sh"]
-          args: ["--NotebookApp.token=''"]
+          args: ["--NotebookApp.token=''"] 

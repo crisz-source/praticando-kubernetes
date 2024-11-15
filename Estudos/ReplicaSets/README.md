@@ -5,4 +5,4 @@ kubectl scale replicasets frontend-rs --replicaset=10 && watch kubectl get pods
 
 # Deletando o replicaset
 kubectl delete rs frontend-rs
-```
+``` 

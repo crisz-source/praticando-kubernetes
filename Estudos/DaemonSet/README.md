@@ -9,7 +9,7 @@ minikube node add
 kubectl get nodes
 minikube ssh --node=nome-do-node
 
-# Testando o daemonset
+# Testando o daemonset 
 kubectl apply -f daemonset.yml 
 
 # Verifique se ocorreu tudo certo.

@@ -2,7 +2,7 @@
 
 ```bash
 kind: ConfigMap
-apiVersion: v1
+apiVersion: v1 
 metadata:
   name: my-cm # <-----
 data: 
